@@ -1,12 +1,19 @@
 // (i) onBlur event
 function blurMessage() {
-  alert("You left the date of birth field!");
+  const dob = document.querySelector('input[type="date"]').value;
+  if (!dob) {
+    alert("You left the date of birth field!");
+  }
 }
 
-// (ii) onFocus event for email field
+// (ii) onFocus email
 function focusEmail() {
-  alert("Please enter a valid email address.");
+  const emailInput = document.getElementById('emailField');
+  if (!emailInput.value) { // only show if empty
+    alert("Please enter a valid email address (e.g., name@example.com)");
+  }
 }
+
 
 // (iii) onChange event — convert to CAPS LOCK
 function toCaps(element) {
@@ -18,4 +25,3 @@ function submitForm() {
   var myModal = new bootstrap.Modal(document.getElementById('successModal'));
   myModal.show();
 }
-
