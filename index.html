@@ -1,0 +1,153 @@
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BLOOM COLLEGE - Student Registration Form</title>
+
+  <!-- Bootstrap CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/styles.css?v=2">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+  <body>
+    <div class="form-container">
+      <h2>BLOOM COLLEGE</h2>
+      <h4>Student Registration Form</h4>
+
+      <form id="studentForm">
+        <!-- Student Image -->
+        <div class="mb-3">
+          <label class="form-label">Student image:</label>
+          <div class="row align-items-center">
+            <div class="col-3">
+              <img src="images/student.jpg" alt="Student Sample" class="student-photo">
+            </div>
+            <div class="col-9">
+              <input type="file" class="form-control mb-1" accept="image/*">
+              <small>(less than 5 MB)</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Details -->
+        <div class="mb-3">
+          <label class="form-label">Student Name:</label>
+          <input type="text" id="studentName" class="form-control" placeholder="Full name" onchange="toCaps(this)">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Father’s Name:</label>
+          <input type="text" id="fatherName" class="form-control" placeholder="Father’s full name" onchange="toCaps(this)">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Mother’s Name:</label>
+          <input type="text" id="motherName" class="form-control" placeholder="Mother’s full name" onchange="toCaps(this)">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gender:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+		
+		<div class="mb-3">
+			<label class="form-label">Date of Birth:</label>
+			<input type="date" class="form-control" onblur="blurMessage()">
+		</div>
+		
+        <div class="mb-3">
+          <label class="form-label">E-mail:</label>
+         <input type="email" class="form-control" placeholder="email@xyz.com" required onfocus="focusEmail()">
+        </div>
+
+        <div class="mb-3"> <label class="form-label">Level:</label> <select class="form-select" required> <option value="">-- Select Level --</option> 
+		<option>Diploma</option>
+		<option>Degree</option> 
+		<option>PhD</option> 
+		</select>
+		</div> 
+		
+		<div class="mb-3"> 
+		<label class="form-label">Department:</label>
+		<select class="form-select" required>
+		<option value="">-- Select Department --</option> 
+		<option>Computer Engineering</option>
+		<option>Electrical Engineering</option> 
+		<option>Mechanical Engineering</option> 
+		</select> 
+		</div>
+
+        <div class="mb-3">
+          <label class="form-label">Tel/Mobile:</label>
+          <input type="tel" class="form-control" placeholder="01x xxx xxxx">
+        </div>
+
+        <h5>Address</h5>
+
+        <div class="mb-3">
+          <label class="form-label">State:</label>
+          <input type="text" class="form-control" placeholder="State">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">City:</label>
+          <input type="text" class="form-control" placeholder="City">
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">Postcode:</label>
+          <input type="text" class="form-control" placeholder="Postcode">
+        </div>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-success me-2" onclick="submitForm()">Register</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="successModalLabel">Success</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Your details have been saved!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+      crossorigin="anonymous"></script>
+	  
+	  <script src="js/script.js"></script>
+  </body>
+</html>
+
+
